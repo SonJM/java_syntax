@@ -53,7 +53,27 @@ public class C03Operator {
         System.out.println(!result2);
 
         // 비트연산자
+        //    0000101     0000110
+        int x = 5; int y = 6;
         // &(AND 연산) : 각 자리의 수가 모두 1일 경우만 1
-        // |(OR 연산) :
+        System.out.println(x & y);    // 4
+        // |(OR 연산) : 각 자리의 수 중 하나라도 1이 있다면 1
+        System.out.println(x | y);    // 7
+        // ^(XOR 연산) : 각 자리의 수 중 둘 중 하나만 1일 때(= 둘의 값이 다를 때) 1
+        System.out.println(x ^ y);    // 3
+        // ~(NOT 연산) : 각 자리마다 보수 처리
+        System.out.println(~ x);      // -6
+        // <<, >>(시프트 연산자) : 곱셈과 나눗셈의 효과가 발생
+        System.out.println(x << 1);   // 10
+
+        int c = 13;     // 00001101
+        int d = 9;      // 00001001
+
+        while(d!=0){
+            int same_index = c & d; // and 연산으로 구한 carry 생성
+            c = c ^ d; // XOR 연산으로 구한 비트값 a에 할당
+            d = same_index << 1;
+        }
+        System.out.println(c);
     }
 }

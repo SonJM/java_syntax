@@ -3,29 +3,29 @@ import java.sql.SQLOutput;
 
 public class C02Variable {
     public static void main(String[] args) {
-//        byte a = 127;
-//        byte b = -128;
-//        System.out.println(a);
-//        System.out.println(b);
-//        a += 1;
-//        b -= 1;
-//        System.out.println(a);
-//        System.out.println(b);
-//
-//        // 실수 : float, double(기본)
-//        float f1 = 1.123456789f;
-//        double b1 = 1.123456789;
-//        System.out.println("f1 : " + f1);
-//        System.out.println("b1 : " + b1);
+        byte a = 127;
+        byte b = -128;
+        System.out.println(a);
+        System.out.println(b);
+        a += 1;
+        b -= 1;
+        System.out.println(a);
+        System.out.println(b);
+
+        // 실수 : float, double(기본)
+        float f1 = 1.123456789f;
+        double b1 = 1.123456789;
+        System.out.println("f1 : " + f1);
+        System.out.println("b1 : " + b1);
 
         // 부동소수점 오차 테스트
         double double_num = 0.1;
-        double a = 0;
+        double a1 = 0;
         // 미세오차는 조정되어 정상적으로 출력
         System.out.println(double_num);
         // 반복적인 연산시 오차가 확대되어 오차확인가능
         for(int i = 0; i < 1000; i++){
-            a += (double_num * 10);
+            a1 += (double_num * 10);
             System.out.println(a/10);
         }
 
@@ -59,21 +59,28 @@ public class C02Variable {
         int ch1_num = ch1;
         System.out.println(ch1_num);
 
+        // char형 알파벳 비교를 위한 묵시적 타입변환 일어난다.
+        System.out.println('A' > 'a');
+
         int my_int1 = 10;
         double my_double1 = my_int1;
         System.out.println(my_double1);
+
+        my_int1 = (int)my_double1;
+        double my_double2 = 7.2f;
+        System.out.println(my_double2);
 
         // 명시적 타입변환
         char my_char2 = 'b';
         int char_num = (int)my_char2;
         // int a가 1 int b가 4일때 둘을 나눈값을 int c에 담아 출력. double d에 담아 출력.
-        int a1 = 1;
-        int b1 = 4;
-        int c1 = a1/b1;
-        double d = a1/b1;
+        int x = 1;
+        int y = 4;
+        int c1 = x/y;
+        double d = x/y;
         System.out.println(c1);
         System.out.println(d);
-        double d3 = a1/(double)b1;
+        double d3 = x/(double)y;
         System.out.println(d3);
 
         // 변수값 선언
