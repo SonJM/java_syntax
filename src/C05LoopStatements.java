@@ -98,5 +98,15 @@ public class C05LoopStatements {
         }
         System.out.println(num);    // if문 밖에서 선언된 변수 값을 if문 안에서 접근하여 변경하는 것은 가능
 //        System.out.println(abc); // if문 안에서 정의된 변수는 접근 불가
+
+        // 라벨문
+        loop1:
+        for(int i=0; i<5; i++){
+            loop2:
+            for(int j=0; j<5; j++){
+                System.out.println("hello world");
+                if(j==2) break loop1;
+            }
+        }
     }
 }
