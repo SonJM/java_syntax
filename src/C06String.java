@@ -164,5 +164,32 @@ public class C06String {
             System.out.println(arr[i].length());
         }
         System.out.println(Arrays.toString(arr));
+
+        // -----------------------------------------
+
+
+        // StringBuffer
+        StringBuffer sb1 = new StringBuffer("hello");
+        System.out.println(sb1);
+        sb1.append(" world");
+        System.out.println(sb1);
+        sb1.insert(5," java");
+        System.out.println(sb1);
+        System.out.println(sb1.substring(6,10));
+        sb1.delete(6,10);
+        System.out.println(sb1);
+
+        // 성능 : String < StringBuffer < String Builder(스레드 safe X)
+        StringBuilder sb2 = new StringBuilder("hello");
+        sb2.append(" world");
+        System.out.println(sb2);
+
+        String B = "hello";
+        StringBuilder sb = new StringBuilder(B);
+
+        sb.insert(0, sb.charAt(sb.length()-1));
+        sb.delete(sb.length(), sb.length()+1);
+
+        System.out.println(sb.toString());
     }
 }
