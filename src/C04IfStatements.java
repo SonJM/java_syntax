@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 public class C04IfStatements {
     static boolean isDonan;
     public static void main(String[] args) throws IOException {
+        // 도어락 키 if문 구현
         String answer = "0234";
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("집 비밀번호를 입력해주세요 : ");

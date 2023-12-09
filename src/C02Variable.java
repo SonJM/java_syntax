@@ -1,8 +1,10 @@
 import java.math.BigDecimal;
 import java.sql.SQLOutput;
+import java.util.Arrays;
 
 public class C02Variable {
     public static void main(String[] args) {
+        // byte로 썼을 때 -128~127까지의 표현이 가능하고, 그 이상을 세팅할 때 오버/언더 플로우 발생
         byte a = 127;
         byte b = -128;
         System.out.println(a);
@@ -28,8 +30,14 @@ public class C02Variable {
             a1 += (double_num * 10);
             System.out.println(a/10);
         }
+        // 오차해결
+        double total2 = 0;
+        for(int i=0;i<1000;i++){
+            total2 += 0.1*10;
+        }
+        System.out.println(total2/10);
 
-        // BigDecimal 사용해보기
+        // BigDecimal 사용해보기(고정소수점)
         double d1 = 1.03;
         double d2 = 0.42;
         System.out.println(d1-d2);
@@ -91,10 +99,19 @@ public class C02Variable {
         // 선언만 한 뒤에 나중에 초기화
         int a3; // 선언만 됐을 때는 값이 0으로 초기화
         a3 = 20;
+        //        객체로 선언 시 int는 0, boolean은 false, string은 null이 할당됨
+        int [] arr1  = new int[5];
+        boolean [] arr2  = new boolean[5];
+        String [] arr3  = new String[5];
+        System.out.println(Arrays.toString(arr1)); // 0
+        System.out.println(Arrays.toString(arr2)); // false
+        System.out.println(Arrays.toString(arr3)); // null
         // 상수는 값의 재할당이 불가능
         final int AGES = 20;
         // 상수는 값의 변경이 불가능 -> AGES = 30; 에러발생
         // 상수는 선언만 한 뒤에 나중에 초기화 하는 방식이 java8 이전에는 안됐었지만, 이후 가능해짐.
+        final int ages2;
+        ages2 = 10;
 
     }
 }

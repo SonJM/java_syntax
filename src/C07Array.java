@@ -3,7 +3,7 @@ import java.util.Comparator;
 
 public class C07Array {
     public static void main(String[] args) {
-/*        // 표현식1
+        // 표현식1
         int[] int_arr1 = {1,2,3,4};
         // 표현식2
         int[] int_arr2 = new int[4];
@@ -71,7 +71,7 @@ public class C07Array {
         for(int i = 0; i<arr3.length; i++){
             arr4[i] = arr3[arr3.length-i-1];
         }
-        System.out.println(Arrays.toString(arr4));*/
+        System.out.println(Arrays.toString(arr4));
 
         // 정렬 : sort() 함수 사용
         int[] arr5 = {5,1,2,7,3,1,2};
@@ -91,9 +91,9 @@ public class C07Array {
 
         // 방법2. 배열뒤집기
         for(int i=0; i<arr5.length/2; i++){
-            int temp = arr5[i];
+            int temp2 = arr5[i];
             arr5[i] = arr5[arr5.length-1-i];
-            arr5[arr5.length-1-i] = temp;
+            arr5[arr5.length-1-i] = temp2;
         }
         System.out.println(Arrays.toString(arr5));
 

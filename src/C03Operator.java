@@ -66,6 +66,8 @@ public class C03Operator {
         // <<, >>(시프트 연산자) : 곱셈과 나눗셈의 효과가 발생
         System.out.println(x << 1);   // 10
 
+        // 컴퓨터의 덧셈 과정
+
         int c = 13;     // 00001101
         int d = 9;      // 00001001
 
@@ -73,7 +75,17 @@ public class C03Operator {
             int same_index = c & d; // and 연산으로 구한 carry 생성
             c = c ^ d; // XOR 연산으로 구한 비트값 a에 할당
             d = same_index << 1;
+            /* 첫번째 반복
+            sameindex:1001
+            a:00100
+            b:10010
+               두번째 반복
+            sameindex:0
+            a:10110
+            b:0         */
         }
         System.out.println(c);
+
+
     }
 }

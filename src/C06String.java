@@ -103,9 +103,12 @@ public class C06String {
         String st4 = st5.replaceAll("[A-z]","");
         System.out.println(st4);
 
-        // substring(a,b)
+        // substring(a,b) : a 이상 b 미만의 index를 자른다.
+        String st6 = "hello World";
+        System.out.println(st6.substring(0,5)); // hello
+        System.out.println(st6.substring(6,st6.length())); // World
 
-        // toUpperCase(), toLowerCase()
+        // toUpperCase(), toLowerCase() : 문자열 대소문자 변환하여 리턴
         String a_ = "Hello";
         String a1 = a_.toUpperCase();
         String a2 = a_.toLowerCase();
@@ -119,7 +122,7 @@ public class C06String {
 
         // char -> String 형 변환
         char ch1 = 'a';
-        String st6 = Character.toString(ch1);
+        String st9 = Character.toString(ch1);
 
         // Pattern 클래스
         boolean matcher = Pattern.matches("[a-z]","helloworld");
@@ -149,13 +152,13 @@ public class C06String {
 
         // isEmpty() 와 null 구분
         String st8 = null;
-        String st9 = "";
+        String st10 = "";
 
-        System.out.println(st1 == null);
-        System.out.println(st2 == null);
-        System.out.println(st2.isEmpty());
+        System.out.println(st1 == null);  // true
+        System.out.println(st2 == null);  // false
+        System.out.println(st2.isEmpty());  // true
         // NullPointerException 예외 발생.
-        System.out.println(st1.isEmpty());
+        System.out.println(st1.isEmpty()); // null은 함수 사용 불가
 
         String[] arr = new String[5];
         arr[0] = "hello";
@@ -165,7 +168,11 @@ public class C06String {
         }
         System.out.println(Arrays.toString(arr));
 
-        // -----------------------------------------
+        // join() : String[] -> String
+        String[] sarr = {"Java", "C", "Python", "C++", "C#",
+                "HTML", "CSS", "JavaScript", "Ocaml"};
+        String result = String.join(" ", sarr);
+        System.out.println(result);
 
 
         // StringBuffer
