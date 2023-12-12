@@ -6,7 +6,7 @@ import static java.sql.Types.NULL;
 
 public class C07Array {
     public static void main(String[] args) {
-/*        // 표현식1
+        // 표현식1
         int[] int_arr1 = {1, 2, 3, 4};
         // 표현식2
         int[] int_arr2 = new int[4];
@@ -126,111 +126,111 @@ public class C07Array {
         // 숫자 조합의 합 : 각기 다른 숫자의 배열이 있을때 만들어질수 있는 2개의 조합의 합을 출력하라.
         int[] int_arr = {10,20,30,40,50,60};
         int index = 0;
-        ArrayList<Integer> sum = new ArrayList<Integer>();
+        ArrayList<Integer> sum1 = new ArrayList<Integer>();
         int[] sum2 = new int[int_arr.length * int_arr.length];
         for(int i=0; i<int_arr.length; i++){
             for(int j=i+1; j<int_arr.length;j++){
-                sum.add(int_arr[i] + int_arr[j]);
+                sum1.add(int_arr[i] + int_arr[j]);
                 sum2[index] = int_arr[i] + int_arr[j];
                 index++;
             }
         }
-        for(int i : sum)
+        for(int i : sum1)
             System.out.println(i);
 
         System.out.println(Arrays.toString(sum2));
 
-   *//*     // 중복 제거하기
-        int[] temp = {10,7,40,5,10};
-        Arrays.sort(temp);
+        // 중복 제거하기
+        int[] temp1 = {10,7,40,5,10};
+        Arrays.sort(temp1);
         int index1 = 0;
         // 배열 복사
-*//**//*        int[] new_temp = new int[temp.length];
-        for(int i=0; i<temp.length;i++){
-                if(i == temp.length-1){
-                    new_temp[index1] = temp[temp.length-1];
+        int[] new_temp = new int[temp1.length];
+        for(int i=0; i<temp1.length;i++){
+                if(i == temp1.length-1){
+                    new_temp[index1] = temp1[temp1.length-1];
                     index1++;
                 }
-                else if(temp[i] != temp[i+1]) {
-                    new_temp[index1] = temp[i];
+                else if(temp1[i] != temp1[i+1]) {
+                    new_temp[index1] = temp1[i];
                     index1++;
                 }
         }
         int[] answer = Arrays.copyOfRange(new_temp,0,index1);
         System.out.println(Arrays.toString(answer));
-        System.out.println(index1);*//*
+        System.out.println(index1);
 
         // 버블 정렬
         // int[] arr = {5,1,2,3,4} 일 때 반복문이 한번만 돌아도 정렬이 되는데 이를 검열할 수 있는 로직 추가
-        for(int i=0; i<temp.length-1; i++){
+        for(int i=0; i<temp1.length-1; i++){
             int count = 0;
-            for(int j=0; j<temp.length-1-i; j++){
-                if(temp[j] > temp[j+1]){
-                    int tmp = temp[j+1];
-                    temp[j+1] = temp[j];
-                    temp[j] = tmp;
+            for(int j=0; j<temp1.length-1-i; j++){
+                if(temp1[j] > temp1[j+1]){
+                    int tmp1 = temp1[j+1];
+                    temp1[j+1] = temp1[j];
+                    temp1[j] = tmp1;
                     count++;
                 }
             }
             if(count == 0) break;
         }
-        System.out.println(Arrays.toString(temp));
+        System.out.println(Arrays.toString(temp1));
 
         // 이진검색(Binary Search)
         // 사전에 오름차순 정렬이 되어 있어야 검색이 가능.
-        int[] arr = {1,3,6,8,9,11};
-        int answer = Arrays.binarySearch(arr, 8);
-        System.out.println(answer);
+        int[] arr15 = {1,3,6,8,9,11};
+        int answer1 = Arrays.binarySearch(arr, 8);
+        System.out.println(answer1);
 
         // 스트림api를 활용한 검색
-        int index = Arrays.stream(arr).filter(a->a==8).findFirst().getAsInt();
+        int index2 = Arrays.stream(arr).filter(a->a==8).findFirst().getAsInt();
 
         // 배열간 비교 : equals, 순서까지 동일해야 true
-        int[] arr1 = {10,20,30};
-        int[] arr2 = {10,20,30};
-        System.out.println(Arrays.equals(arr1, arr2));
+        int[] arr16 = {10,20,30};
+        int[] arr17 = {10,20,30};
+        System.out.println(Arrays.equals(arr16, arr17));
 
         // 배열 복사 : copyOf(배열, end), copyOfRange(배열, start, end)
-        int[] arr = {10,20,30,40,50};
-        int[] new_arr1 = Arrays.copyOf(arr,10);
-        int[] new_arr2 = Arrays.copyOfRange(arr,1,4);
+        int[] arr11 = {10,20,30,40,50};
+        int[] new_arr1 = Arrays.copyOf(arr11,10);
+        int[] new_arr2 = Arrays.copyOfRange(arr11,1,4);
         System.out.println(new_arr1);
         System.out.println(new_arr2);
 
         // 2차원 배열 할당
-        int[][] arr = new int[2][3];
+        int[][] arr18 = new int[2][3];
 
         // 2차원 가변배열 선언 및 할당
-        int[][] arr2 = new int[3][];
-        arr2[0] = new int[1];
-        arr2[1] = new int[2];
-        arr2[2] = new int[3];
+        int[][] arr9 = new int[3][];
+        arr9[0] = new int[1];
+        arr9[1] = new int[2];
+        arr9[2] = new int[3];
 
         // 가변배열 리터럴 방식
-        int[][] arr3 = {{10}, {10,20}, {10,20,30}};
+        int[][] arr10 = {{10}, {10,20}, {10,20,30}};
 
         // [3][4] 사이즈의 배열을 선언 한 뒤
         // 1,2,3 ~ 12까지의 숫자값 각 배열에 할당
-        int[][] arr4 = new int[3][4];
+        int[][] arr8 = new int[3][4];
         int count = 1;
         for(int i=0; i<3; i++){
             for(int j=0; j<4; j++){
-                arr4[i][j] = count++;
+                arr8[i][j] = count++;
             }
         }
-        System.out.println(Arrays.deepToString(arr4));*/
+        System.out.println(Arrays.deepToString(arr8));
 
         // 가변배열만들기 : 전체사이즈5 -> {{x}, {x,x}, {x,x,x}, {x,x,x,x}, {x,x,x,x,x}}
         // 각 배열마다 사이즈 1,2,3,4,5로 커지도록 : for문
         // 각 사이즈별로 1은 10이 모두 들어가고, 2는 20이 모두 들어가고, 3은 30이 모두 들어가도록.
-        int[][] arr5 = new int[5][];
+        int[][] arr7 = new int[5][];
 
         for(int i=0; i<5; i++){
-            arr5[i] = new int[i+1];
+            arr7[i] = new int[i+1];
             for(int j=0; j<i+1; j++){
-                arr5[i][j] = (i+1)*10;
+                arr7[i][j] = (i+1)*10;
             }
         }
-        System.out.println(Arrays.deepToString(arr5));
+        System.out.println(Arrays.deepToString(arr7));
     }
 }
