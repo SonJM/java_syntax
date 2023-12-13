@@ -4,18 +4,16 @@ import java.util.*;
 
 public class test {
     public static void main(String[] args) throws Exception{
-        Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
-        char[] charArray = str.toCharArray();
+        String[] str = {"119", "97674223", "1195524421"};
+        Set<String> setStr = new HashSet<>(Arrays.asList(str));
 
-        int i = 0;
-        while(charArray[i] == charArray[charArray.length-1-i]){
-            if(i == charArray.length/2) {
-                System.out.println(1);
-                return;
+        boolean answer = false;
+
+        for(int i=0; i<str.length; i++){
+            for(int j=i+1; j<str.length; j++){
+                if(str[i].contains(str[i].substring(0,j))) answer = true;
             }
-            i++;
         }
-        System.out.println(0);
+        System.out.println(answer);
     }
 }

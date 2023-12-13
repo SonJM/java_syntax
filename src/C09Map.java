@@ -83,5 +83,22 @@ public class C09Map {
         }
 
         System.out.println(myMap3);
+
+        // LinkedHashMap : 데이터 삽입순서 유지
+        Map<String, Integer> myMap1 = new LinkedHashMap<>();
+        myMap1.put("hello5", 1);
+        myMap1.put("hello4", 1);
+        myMap1.put("hello3", 1);
+        myMap1.put("hello2", 1);
+        myMap1.put("hello1", 1);
+        System.out.println(myMap1);
+        // TreeMap : key를 통해 데이터 정렬
+        Map<String, Integer> myMap4 = new TreeMap<>();
+        myMap4.put("hello5", 1);
+        myMap4.put("hello4", 1);
+        myMap4.put("hello3", 1);
+        myMap4.put("hello2", 1);
+        myMap4.put("hello1", 1);
+        System.out.println(myMap4);
     }
 }
