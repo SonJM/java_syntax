@@ -88,7 +88,7 @@ public class C11StackQueue {
         System.out.println(myQue1.offer("hello1"));
         System.out.println(myQue1.offer("hello2"));
         System.out.println(myQue1.offer("hello3"));
-        System.out.println(myQue1.offer("hello4"));*/
+        System.out.println(myQue1.offer("hello4"));
 
         // 우선순위큐(PriorityQueue)
         // 우선순위 큐에서는 데이터가 큐에 들어갈 때마다 부분적으로 정렬(재조정)되어 큐의 최상단에는 가장 작은값(또는 가장큰값)이 위치
@@ -101,6 +101,19 @@ public class C11StackQueue {
         pq.add(50);
         System.out.println(pq);
 
-        while(!pq.isEmpty()) System.out.println(pq.poll());
+        while(!pq.isEmpty()) System.out.println(pq.poll());*/
+
+        // ArrayDeque : 양방향에서 데이터를 삽입 / 제거 할 수 있다.
+        // 성능이 빠르다.
+        Deque<Integer> myDeque = new ArrayDeque<>();
+        myDeque.addFirst(10);
+        myDeque.addFirst(20);
+        System.out.println(myDeque);
+        myDeque.addLast(30);
+        System.out.println(myDeque);
+
+        System.out.println(myDeque.pollFirst());
+        System.out.println(myDeque.pollLast());
+        System.out.println(myDeque);
     }
 }
