@@ -79,6 +79,9 @@ class Person {
 }
 
 // 은행 계좌 실습
+// 생성자란 클래스가 객체화 될 때 자동으로 실행되는 메서드
+// 클래스명(){} : 생성자의 형태
+// 별도의 생성자를 만들지 않으면 매개변수없는 기본생성자가 숨겨져있다.
 class BankAccount{
     private BigDecimal balance; // 잔고
     private int account_number;  // 계좌번호
