@@ -5,7 +5,6 @@ public class C12_4Constructor {
         Calender cal = new Calender();
         Calender cal1 = new Calender("2023","12","15");
         Calender cal2 = new Calender("2023","12" );
-
     }
     static class Calender{
         private String year;
