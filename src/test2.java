@@ -1,11 +1,12 @@
 import java.util.*;
 
 class test2 {
+    static int answer = 0;
     public static void main(String[] args) {
-        String str = "(())()";
-        int[] scoville = {1, 2, 3, 9, 10, 12};
-        int k = 7;
-        System.out.println(solution4(str));
+        int k = 100;
+        int[][] dungeons = {{80,20},{50,40},{30,10},{20,10},{30,20}};
+
+        System.out.println(solution(k,dungeons));
     }
 
     public static int solution(int[] scoville, int K) {
@@ -118,7 +119,6 @@ class test2 {
         }
         return true;
     }
-    static int answer = 0;
     public int solution(int balls, int share) {
 
         share_count(balls, share, 0, 0);
@@ -131,6 +131,26 @@ class test2 {
         }
         for(int i=start; i<balls; i++){
             share_count(balls, share, count+1, i+1);
+        }
+    }
+    static boolean[] visited;
+    static public int solution(int k, int[][] dungeons) {
+        visited = new boolean[dungeons.length];
+        dungeon(k, dungeons, 0);
+        return answer;
+    }
+    static public void dungeon(int k, int[][] dungeons, int count){
+        if(count == dungeons.length){
+            answer = Math.max(answer, count);
+            return;
+        }
+        for(int i=0; i<dungeons.length; i++){
+            if(k >= dungeons[i][0] && !visited[i]){
+                visited[i] = true;
+                dungeon(k-dungeons[i][1], dungeons, count+1);
+                visited[i] = false;
+            }
+            else if(k<dungeons[i][0] && !visited[i]) answer = Math.max(answer, count);
         }
     }
 }
