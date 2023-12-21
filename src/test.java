@@ -17,3 +17,7 @@ public class test {
         System.out.println(answer);
     }
 }
+
+class testClass{
+    static int test;
+}
