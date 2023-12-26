@@ -103,7 +103,7 @@ class Author{
     private String email;
     private List<Post> posts;
     static Long static_id = 0L;
-    Author(String name, String email){
+    public Author(String name, String email){
         static_id += 1;
         this.id = static_id;
         this.name = name;
@@ -131,7 +131,7 @@ class Post{
     private String contents;
     private Author author;
     static Long static_id = 0L;
-    Post(String title, String contents, Author author){
+    public Post(String title, String contents, Author author){
         static_id += 1;
         this.id = static_id;
         this.title = title;
