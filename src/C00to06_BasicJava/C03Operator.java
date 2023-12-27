@@ -1,3 +1,5 @@
+package C00to06_BasicJava;
+
 public class C03Operator {
     public static void main(String[] args) {
         // 산술연산자

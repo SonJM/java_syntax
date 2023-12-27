@@ -1,3 +1,5 @@
+package C00to06_BasicJava;
+
 import java.util.Scanner;
 
 public class C01InputOutput {

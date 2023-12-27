@@ -1,5 +1,6 @@
+package C00to06_BasicJava;
+
 import java.math.BigDecimal;
-import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class C02Variable {

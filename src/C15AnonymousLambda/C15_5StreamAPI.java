@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class C15_5StreamAPI1 {
+public class C15_5StreamAPI {
     public static void main(String[] args) {
         int[] arr = {20,10,4,12};
         // 전통적인 방식의 데이터 접근방식

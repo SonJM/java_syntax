@@ -1,4 +1,5 @@
-import javax.naming.PartialResultException;
+package C00to06_BasicJava;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

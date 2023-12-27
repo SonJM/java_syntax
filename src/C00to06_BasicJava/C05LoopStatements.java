@@ -1,7 +1,8 @@
+package C00to06_BasicJava;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class C05LoopStatements {

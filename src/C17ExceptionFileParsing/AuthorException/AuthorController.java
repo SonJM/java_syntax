@@ -37,15 +37,16 @@ public class AuthorController {
                     String input_email = sc.nextLine();
                     System.out.println("패스워드를 입력해주세요");
                     String input_password = sc.nextLine();
-                    Optional<Author> loginedAuthor = Optional.empty();
+                    Author loginedAuthor = null;
+//                    Optional<Author> loginedAuthor = Optional.empty();
                     try{
-                        loginedAuthor = authorService.login(input_email, input_password);
+                        loginedAuthor = authorService.login2(input_email, input_password);
+                        System.out.println(loginedAuthor.getName() + "님 환영합니다.");
                     } catch(NoSuchElementException e){
                         System.out.println("존재하지 않는 이메일입니다.");
                     } catch(IllegalArgumentException e){
                         System.out.println("패스워드가 일치하지 않습니다.");
                     }
-                    loginedAuthor.ifPresent(author -> System.out.println(author.getName() + "님 환영합니다."));
                     if(authorService.event(loginedAuthor)){
                         String list = AuthorService.EventList.randomDirection().toString();
                         System.out.println("축하드립니다. 첫 로그인 이벤트에 당첨되셨습니다.");

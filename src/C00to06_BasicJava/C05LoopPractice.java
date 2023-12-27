@@ -1,10 +1,9 @@
-import org.w3c.dom.ranges.Range;
+package C00to06_BasicJava;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class C05LoopPractice {

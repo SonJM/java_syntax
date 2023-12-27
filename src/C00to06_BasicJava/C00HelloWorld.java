@@ -1,3 +1,5 @@
+package C00to06_BasicJava;
+
 public class C00HelloWorld{
     public static void main(String[] args) {
         //      문자열은 쌍따옴표로 감싼다

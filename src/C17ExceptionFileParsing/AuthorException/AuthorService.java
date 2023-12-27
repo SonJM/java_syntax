@@ -45,23 +45,17 @@ public class AuthorService {
     }
 
     // email로 비교해 로그인 하는 방법(조금 더 효율적?)
-    Optional<Author> login2(String email, String password){
+    Author login2(String email, String password){
         Optional<Author> author = authorRepository.getAuthorByEmail(email);
-        if(author.isPresent()){
-            if(author.get().getPassword().equals(password)){
-                return author;
-            }else{
-                throw new IllegalArgumentException("비밀번호가 틀렸습니다");
-            }
-        } else{
+        if(author.isEmpty())
             throw new NoSuchElementException("email이 존재하지 않습니다.");
-        }
+        if(!author.get().getPassword().equals(password))
+            throw new IllegalArgumentException("비밀번호가 틀렸습니다");
+        return author.get();
     }
-    boolean event(Optional<Author> author){
-        if(author.isPresent()){
-            for(int i=0; i<eventNumber.length; i++){
-                if(author.get().getId() == eventNumber[i]) return true;
-            }
+    boolean event(Author author){
+        for (int j : eventNumber) {
+            if (author.getId() == j) return true;
         }
         return false;
     }

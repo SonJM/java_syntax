@@ -1,3 +1,5 @@
+package C00to06_BasicJava;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
